@@ -1,4 +1,4 @@
-#include <iostream> // untuk C++
+
 #include <stdio.h> // untuk C
 
 using namespace std;

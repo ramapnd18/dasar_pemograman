@@ -48,43 +48,43 @@ int main() {
 
 
 
-	int matrix[2][3];
+	// int matrix[2][3];
 	
-	for(int i = 0;i<2;i++){
-		for(int j = 0;j<3;j++){
-			printf("Masukan angka [%d][%d] : ",i,j);
-			scanf("%d", &matrix[i][j]);
-			getchar();
-		}
-	}
+	// for(int i = 0;i<2;i++){
+	// 	for(int j = 0;j<3;j++){
+	// 		printf("Masukan angka [%d][%d] : ",i,j);
+	// 		scanf("%d", &matrix[i][j]);
+	// 		getchar();
+	// 	}
+	// }
 	
-	printf("[");
-	for(int i = 0;i<2;i++){
-		for(int j = 0;j<3;j++){
-			printf(" %d ",matrix[i][j]);
-		}
-		if(i<1){
-		printf(" \n");
-		printf(" ");
-		}
-	}
-	printf("]");
+	// printf("[");
+	// for(int i = 0;i<2;i++){
+	// 	for(int j = 0;j<3;j++){
+	// 		printf(" %d ",matrix[i][j]);
+	// 	}
+	// 	if(i<1){
+	// 	printf(" \n");
+	// 	printf(" ");
+	// 	}
+	// }
+	// printf("]");
 	
-	printf("\n\n");
-	printf("Transpos\n");
+	// printf("\n\n");
+	// printf("Transpos\n");
 	
-	printf("[");
-	for(int i = 0;i<3;i++){
-		for(int j = 0;j<2;j++){
-			printf(" %d ",matrix[j][i]);
-		}
-		if(i<2){
-		printf(" \n");
-		printf(" ");
-		}
-	}
-	printf("]");
+	// printf("[");
+	// for(int i = 0;i<3;i++){
+	// 	for(int j = 0;j<2;j++){
+	// 		printf(" %d ",matrix[j][i]);
+	// 	}
+	// 	if(i<2){
+	// 	printf(" \n");
+	// 	printf(" ");
+	// 	}
+	// }
+	// printf("]");
 
-
+	printf("Hello World!!");
 	return 0;
 }

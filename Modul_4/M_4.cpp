@@ -100,6 +100,11 @@ int main() {
 	for(int i = 0;i<3;i++){
 		for(int j = 0;j<2;j++){
 			printf(" %d ",matrix[j][i]);
+			if (j<1){
+			printf(", ");
+			}
+			
+			 
 		}
 		if(i<2){
 		printf(" \n");

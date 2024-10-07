@@ -214,24 +214,37 @@ int main() {
 
 
 
-    int angka[5] = {1, 3, 5, 13, 7};
-    int terbesar = angka[0];
-    int terkecil = angka[0];
+  #include <stdio.h>
 
-    for (int i = 1; i < 5; i++) {
+    int angka[2][3];
+    
+    for(int i=0; i<2; i++){
         
-        printf("%d",angka);
-        
-        if (angka[i] > terbesar) {
-            terbesar = angka[i];
-        }
-        if (angka[i] < terkecil) {
-            terkecil = angka[i];
+        for(int j=0; j<3; j++){
+            
+           printf("Masukan angka [%d][%d] :", i,j);
+           scanf("\n%d", &angka[i][j]);
+           getchar ();
         }
     }
+        
+    printf("[");
+   for(int i=0; i<2; i++){
+       
+        for(int j=0; j<3; j++){
+            
+           printf("%d ", angka[i][j]);
+        }
+		if(i==1){
+        	printf("]");
+		}
+        printf("\n");
+    }
+    
+    
+    
 
-    printf("\nAngka terkecil: %d\n", terkecil);
-    printf("\nAngka terbesar: %d\n", terbesar);
+
 
     
 	

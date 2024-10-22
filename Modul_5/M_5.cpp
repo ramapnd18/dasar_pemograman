@@ -1,128 +1,76 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Mahasiswa
-{
-    char nama[20];
-    char kelas;
-    int umur;/* data */
-};
-
-// typedef struct 
+// struct Buku
 // {
-//     char jalan[20];
-//     char kecamatan[20];
-//     int kodepos;
-// }Alamat;
+//     char judul[30];
+//     char penulis[20];
+//     int terbit;
+// };
 
-// typedef struct 
-// {
-//     char nama[30];
-//     char kelamin[20];
-//     int umur;
-//     // Alamat alamat; // nested struct
-// } Mahasiswa;
+    typedef struct{
+        int waktu;
+        float gaji;
+        char alamat[50];
+    }Status;
 
+    typedef struct{
+        char nama[30];
+        char jabatan[20];
+        Status status;
+    }Pegawai;
 int main(){
-    // struct Mahasiswa mahasiswa1;
-   
-    // struct Mahasiswa mahasiswa1={.nama ="Rama Tri Ramdhani", .kelas ='A',.umur = 20};
+
+    printf("=======================");
+	printf("\nNama: Rama Tri Ramdhani");
+	printf("\nNPM: 247006111057");
+	printf("\nKelas: A/B");
+	printf("\n=======================\n");
     
-    // Mahasiswa mahasiswa[3]={
-    //     {
-    //         "Rama Tri Ramdhani",
-    //         "Laki-Laki",
-    //         20,
-    //     },
-    //     {
-    //         "Zheka Baila",
-    //         "Laki-Laki",
-    //         10,
-    //     },
-    //     {
-    //         "Rama Tri Ramdhani",
-    //         "Laki-Laki",
-    //         20,
-    //     }
+    // struct Buku buku1={"Dasar-dasar Pemrograman","Shinta Esabella",2021};
+
+    // printf("Judul buku      : %s\n",buku1.judul);
+    // printf("Penulis         : %s\n",buku1.penulis);
+    // printf("Tahun Terbit    : %d\n",buku1.terbit);
+
+    Pegawai pegawai[4];
+    int panjang = sizeof(pegawai)/sizeof(pegawai[0]);
+
+    for (int i = 0; i < panjang; i++)
+    {
+        printf("Pegawai ke-%d\n",i+1);
+        printf("Masukan Nama\t: ");
+        fgets(pegawai[i].nama, sizeof(pegawai[i].nama), stdin);
+        pegawai[i].nama[strlen(pegawai[i].nama)-1]='\0';
         
-    // };
+        printf("Masukan Jabatan\t: ");
+        fgets(pegawai[i].jabatan, sizeof(pegawai[i].jabatan), stdin);
+        pegawai[i].jabatan[strlen(pegawai[i].jabatan)-1]='\0';
 
-
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     printf("Mahasiswa ke-%d\n",i+1);
-    //     printf("masukan nama\t: ");
-    //     fgets(mahasiswa[i].nama, sizeof(mahasiswa[i].nama), stdin);
-    //     mahasiswa[i].nama[strlen(mahasiswa[i].nama)-1]='\0';
-
-    //     printf("masukan kelamin\t: ");
-    //     fgets(mahasiswa[i].kelamin, sizeof(mahasiswa[i].kelamin), stdin);
-    //     mahasiswa[i].kelamin[strlen(mahasiswa[i].kelamin)-1]='\0';
+        printf("Masukan Waktu Bekerja\t: ");
+        scanf("%d",&pegawai[i].status.waktu);
+        getchar();
         
-    //     printf("masukan umur\t: ");
-    //     scanf("%d",&mahasiswa[i].umur);
-    //     getchar();
-    //     // printf("Jalan\t: %s\n",mahasiswa[i].alamat.jalan);
-    //     // printf("Kecamatan\t: %s\n",mahasiswa[i].alamat.kecamatan);
-    //     // printf("Kode Pos\t: %d\n",mahasiswa[i].alamat.kodepos);
-    
-    // }
+        printf("Masukan Gaji\t: ");
+        scanf("%f",&pegawai[i].status.gaji);
+        getchar();
 
+        printf("Masukan Alamat\t: ");
+        fgets(pegawai[i].status.alamat, sizeof(pegawai[i].status.alamat), stdin);
+        pegawai[i].status.alamat[strlen(pegawai[i].status.alamat)-1]='\0';
+        printf("\n");
+    }
 
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     printf("Nama\t: %s\n",mahasiswa[i].nama);
-    //     printf("Kelas\t: %s\n",mahasiswa[i].kelamin);
-    //     printf("Umur\t: %d\n",mahasiswa[i].umur);
-
-    //     // printf("Jalan\t: %s\n",mahasiswa[i].alamat.jalan);
-    //     // printf("Kecamatan\t: %s\n",mahasiswa[i].alamat.kecamatan);
-    //     // printf("Kode Pos\t: %d\n",mahasiswa[i].alamat.kodepos);
-    //     /* code */printf("\n");
-    // }
-    
-    // Mahasiswa mahasiswa1;
-    
-    // strcpy(mahasiswa1.nama, "Rama Tri");
-    // strcpy(mahasiswa1.alamat.kota, "Bandung");
-    // mahasiswa1.kelas = 'A';
-    // mahasiswa1.alamat.kodepos = 46396;
-    // mahasiswa1.umur = 20;
-
-
-    // printf("Masukan Nama\t: ");
-    // fgets(mahasiswa1.nama, sizeof(mahasiswa1.nama), stdin);
-    // mahasiswa1.nama[strcspn(mahasiswa1.nama, "\n")] = '\0';
-
-    // printf("Masukan Kelamin\t: ");
-    // fgets(mahasiswa1.kelamin, sizeof(mahasiswa1.kelamin), stdin);
-    // mahasiswa1.kelamin[strcspn(mahasiswa1.kelamin, "\n")] = '\0';
-
-
-    // printf("Masukan Umur\t: ");
-    // scanf("%d", &mahasiswa1.umur);
-    // getchar();
-
-
-    // printf("Masukan Alamat\t: ");
-    // fgets(mahasiswa1.alamat.jalan, sizeof(mahasiswa1.alamat.jalan), stdin);
-    // mahasiswa1.alamat.jalan[strcspn(mahasiswa1.alamat.jalan, "\n")] = '\0';
-    // // mahasiswa1.alamat.jalan[strlen(mahasiswa1.alamat.jalan)-1] = '\0';
-
-    // printf("Masukan Kecamatan\t: ");
-    // fgets(mahasiswa1.alamat.kecamatan, sizeof(mahasiswa1.alamat.kecamatan), stdin);
-    // mahasiswa1.alamat.kecamatan[strcspn(mahasiswa1.alamat.kecamatan, "\n")] = '\0';
-   
-    // printf("Masukan Kodepos\t: ");
-    // scanf("%d", &mahasiswa1.alamat.kodepos);
-    
-    // printf("Nama\t: %s\n", mahasiswa1.nama);
-    // printf("kelamin\t: %s\n", mahasiswa1.kelamin);
-    // printf("Umur\t: %d\n", mahasiswa1.umur);
-    // printf("Kecamatan\t: %s\n", mahasiswa1.alamat.kecamatan);
-    // printf("Jalan\t: %s\n", mahasiswa1.alamat.jalan);
-    // printf("Kodepos\t: %d\n", mahasiswa1.alamat.kodepos);
-
+    for (int i = 0; i < panjang; i++)
+    {
+        printf("\nPegawai ke-%d",i+1);
+        printf("\nNama\t: %s",pegawai[i].nama);
+        printf("\nJabatan\t: %s",pegawai[i].jabatan);
+        printf("\nWaktu Bekerja\t: %d tahun",pegawai[i].status.waktu);
+        printf("\nGaji\t: %.2f",pegawai[i].status.gaji);
+        printf("\nAlamat\t: %s",pegawai[i].status.alamat);
+        printf("\n");
+    }
 
     return 0;
 }

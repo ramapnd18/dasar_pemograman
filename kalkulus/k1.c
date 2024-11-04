@@ -4,7 +4,7 @@
 int faktor2(int a, int b, int c){
     int D = b * b - 4 * a * c;
     printf("D = %d\n", D);
-    if (D < 0) {
+    if (D < 0) {   
         printf("Fungsi kuadrat ini memiliki akar imaginer\n");
         return 0;
     }
